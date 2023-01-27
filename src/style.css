@@ -1,0 +1,64 @@
+.App {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #292f36;
+    background-color: #818AA3;
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.sidebar {
+    padding: 1em;
+    width: 200px;
+    background-color: #292f36;
+    color: #F7FFF7;
+}
+
+.sidebar li {
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(255, 255, 255, .08);
+}
+
+.sidebar li i, .sidebar li span {
+    padding: 0px 10px 0px 0px;
+    user-select: none;
+}
+
+.sidebar li:hover {
+    cursor: pointer;
+}
+
+.sidebar .active {
+    background-color: rgba(255, 255, 255, .16);
+    font-weight: bold;
+}
+
+main {
+    padding: 1em;
+    width: calc(100vw - 200px);
+}
+
+main li {
+    margin-top: 20px;
+    padding: 1em;
+    border-radius: 15px;
+    background-color: #F7FFF7;
+    display: flex;
+}
+
+#newTodo {
+    user-select: none;
+}
