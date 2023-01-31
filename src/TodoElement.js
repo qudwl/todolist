@@ -23,19 +23,23 @@ const TodoElement = (td) => {
     const form = document.createElement("form");
     const input = document.createElement("input");
     input.value = span.innerText;
-    input.focus();
     form.appendChild(input);
     span.innerText = "";
+    span.classList.toggle("nowidth");
     li.appendChild(form);
+    input.focus();
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       td.title = input.value;
       span.innerText = input.value;
+      span.classList.toggle("nowidth");
       li.removeChild(form);
+      span.focus();
     });
   });
 
+  span.tabIndex = 0;
   return li;
 };
 

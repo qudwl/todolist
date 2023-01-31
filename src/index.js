@@ -17,6 +17,7 @@ addTodoBtn.addEventListener("click", () => {
   const text = addTodoBtn.children[1];
 
   text.innerText = "";
+  text.classList.toggle("nowidth");
 
   const input = document.createElement("input");
   const form = document.createElement("form");
@@ -33,5 +34,13 @@ addTodoBtn.addEventListener("click", () => {
     document.getElementById("todolist").insertBefore(el, addTodoBtn);
     text.innerText = "Add New";
     addTodoBtn.removeChild(form);
+    text.classList.toggle("nowidth");
+    addTodoBtn.focus();
   });
+});
+
+document.body.addEventListener("keypress", (e) => {
+  if (e.key == "Enter") {
+    console.log(document.activeElement.click());
+  }
 });

@@ -82,6 +82,14 @@ main li {
     display: flex;
 }
 
+main li span {
+    width: 100%;
+}
+
+.nowidth {
+    width: 0px;
+}
+
 i {
     padding: 0px 10px 0px 0px;
 }
