@@ -19,6 +19,14 @@ class Project {
     return this.todos.length;
   }
 
+  get title() {
+    return this._title;
+  }
+
+  set title(title) {
+    this._title = title;
+  }
+
   /**
    * Get todo at index of.
    * @param {number} index

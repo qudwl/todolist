@@ -64,6 +64,10 @@ ul {
     font-weight: bold;
 }
 
+.sidebar input {
+    color: #F7FFF7;
+}
+
 .complete {
     text-decoration: line-through;
     color: #333;
@@ -96,4 +100,7 @@ i {
 
 #newTodo {
     user-select: none;
+}
+#projects li {
+    margin-bottom: 10px;
 }
