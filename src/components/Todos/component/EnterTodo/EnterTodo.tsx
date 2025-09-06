@@ -18,7 +18,7 @@ const EnterTodo: React.FC<EnterTodoProps> = ({ addTodo }) => {
 
     return (
         <form className={styles.enterTodo} onSubmit={handleSubmit}>
-            <label htmlFor="newTodo">New Todo</label>
+            <label htmlFor="newTodo" className="invisibleText">New Todo</label>
             <input id="newTodo" name="newTodo" type="text" placeholder="Enter a new todo..." value={text} onChange={e => setText(e.target.value)} />
             <button type="submit" className={cn(text.length > 0 && styles.visibleButton)}><FaPlus title="Add todo" /></button>
         </form>

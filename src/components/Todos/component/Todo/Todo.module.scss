@@ -3,12 +3,30 @@
 
 .todo {
   margin: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   button {
     margin: 8px 0px;
+    padding: 0px;
     font-size: 1.2em;
     background: none;
     border: none;
+  }
+
+  input {
+    margin: 8px 0px;
+    padding: 0px;
+    font-size: 1.2em;
+    border: none;
+    border-bottom: 1px solid $color-text;
+    transition: border-bottom 0.1s ease-in-out;
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $color-primary;
+    }
   }
 
   .buttonList {
@@ -23,5 +41,18 @@
       width: 48px;
       height: 48px;
     }
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.6em;
+  }
+
+  .completed {
+    text-decoration: line-through;
+  }
+
+  .starred svg {
+    fill: $color-starred;
   }
 }
