@@ -1,0 +1,17 @@
+@use "/src/style/mixins.scss" as *;
+@use "/src/style/variables.scss" as *;
+
+.todos {
+  width: calc(100vw - $width-sidebar);
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: $color-background-raised;
+  padding: 100px 32px 0px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  @include elevation("medium");
+
+  @include mobile {
+    width: 100vw;
+  }
+}

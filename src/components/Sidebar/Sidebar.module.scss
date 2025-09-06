@@ -3,6 +3,7 @@
 
 .sidebar {
   width: $width-sidebar;
+  flex-shrink: 0;
 
   @include mobile {
     visibility: hidden;

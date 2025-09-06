@@ -1,0 +1,47 @@
+@use "/src/style/mixins.scss" as *;
+@use "/src/style/variables.scss" as *;
+
+.enterTodo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transition: border-bottom 0.1s ease-in-out;
+  border-bottom: 1px solid $color-text;
+
+  input {
+    width: calc(100% - 30px);
+    border: 0px;
+
+    padding: 8px;
+    font-size: 1.2em;
+
+    &:focus {
+      outline: none;
+      width: 90%;
+    }
+  }
+
+  button {
+    background: none;
+    border: none;
+    width: 30px;
+    visibility: hidden;
+
+    svg {
+      opacity: 0;
+      transition: opacity 0.1s ease-in-out;
+    }
+
+    &.visibleButton {
+      visibility: visible;
+
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:focus-within {
+    border-bottom: 2px solid $color-primary;
+  }
+}
