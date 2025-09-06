@@ -1,0 +1,27 @@
+@use "/src/style/variables.scss" as *;
+@use "/src/style/mixins.scss" as *;
+
+.todo {
+  margin: 8px;
+
+  button {
+    margin: 8px 0px;
+    font-size: 1.2em;
+    background: none;
+    border: none;
+  }
+
+  .buttonList {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+
+    button {
+      background: none;
+      border: none;
+      padding: 0px;
+      width: 48px;
+      height: 48px;
+    }
+  }
+}

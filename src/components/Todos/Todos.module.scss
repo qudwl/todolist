@@ -9,6 +9,15 @@
   padding: 100px 32px 0px;
   flex-shrink: 0;
   box-sizing: border-box;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 16px;
+  }
+
   @include elevation("medium");
 
   @include mobile {
