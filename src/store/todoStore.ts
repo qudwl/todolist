@@ -4,15 +4,16 @@ interface Todo {
   id: number;
   text: string;
   starred: boolean;
-  completed: boolean;
+  completed: number; // 0 is false, 1 is true.
   lastEdit: number;
-  due: number;
+  due: number; // -1 means does not have a due date.
   list: number;
 }
 
 interface TodoList {
   id: number;
   name: string;
+  lastEdit: number;
 }
 
 const db = new Dexie("todolist") as Dexie & {
@@ -22,8 +23,8 @@ const db = new Dexie("todolist") as Dexie & {
 
 db.version(1).stores({
   todos: "++id, text, starred, completed, lastEdit, due, list",
-  todoLists: "++id, name",
+  todoLists: "++id, name, lastEdit",
 });
 
-export type { Todo };
+export type { Todo, TodoList };
 export { db };

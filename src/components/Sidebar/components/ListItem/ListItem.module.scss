@@ -1,0 +1,11 @@
+@use "/src/style/variables.scss" as *;
+@use "/src/style/mixins.scss" as *;
+
+.listItem {
+  @include listItem;
+
+  &.selected {
+    background-color: $color-background-raised;
+    @include elevation("high");
+  }
+}

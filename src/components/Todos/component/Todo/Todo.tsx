@@ -1,18 +1,19 @@
 import styles from "./Todo.module.scss";
-import { db, type Todo } from "../../../../store/todoStore";
+import { db, type Todo as TodoProps } from "../../../../store/todoStore";
 import { FaRegStar, FaRegSquare, FaRegTrashCan, FaRegSquareCheck } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
 
-const Todo: React.FC<Todo> = ({ text, completed, id, lastEdit, starred }) => {
+const Todo: React.FC<TodoProps> = ({ text, completed, id, lastEdit, starred }) => {
     const iconSize = "16px";
 
     const [newText, setNewText] = useState(text);
     const [editing, setEditing] = useState(false);
 
     const completeItem = () => {
+        const newCompleted = completed === 0 ? 1 : 0;
         try {
-            db.todos.update(id, { completed: !completed, lastEdit: new Date().getTime() })
+            db.todos.update(id, { completed: newCompleted, lastEdit: new Date().getTime() })
         } catch (err) {
             console.error(err);
         }
@@ -77,14 +78,14 @@ const Todo: React.FC<Todo> = ({ text, completed, id, lastEdit, starred }) => {
                         <input autoFocus type="text" name={`newTodo-${id}`} id={`newTodo-${id}`} value={newText} onChange={e => setNewText(e.target.value)} />
                     </form>
                     :
-                    <button type="button" className={completed ? styles.completed : undefined} aria-description="Edit todo" onClick={enableEditing}>
+                    <button type="button" className={completed === 1 ? styles.completed : undefined} aria-description="Edit todo" onClick={enableEditing}>
                         {text}
                     </button>
                 }
                 <p>{dateString()}</p>
             </div>
             <div className={styles.buttonList}>
-                <button type="button" onClick={completeItem}>{completed ? <FaRegSquareCheck size={iconSize} /> : <FaRegSquare size={iconSize} title="" />}</button>
+                <button type="button" onClick={completeItem}>{completed === 1 ? <FaRegSquareCheck size={iconSize} /> : <FaRegSquare size={iconSize} title="" />}</button>
                 <button type="button" onClick={deleteItem}><FaRegTrashCan size={iconSize} /></button>
                 <button type="button" onClick={starItem} className={starred ? styles.starred : undefined}>{starred ? <FaStar size={iconSize} /> : <FaRegStar size={iconSize} />}</button>
             </div>

@@ -6,11 +6,12 @@ import cn from "classnames"
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  const [list, setList] = useState(-3);
 
   return (
     <div className={cn("root", isOpen && "sidebar-open")}>
-      <Sidebar isOpen />
-      <Todos />
+      <Sidebar isOpen list={list} setList={setList} />
+      <Todos list={list} />
       <OpenSidebar isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   )

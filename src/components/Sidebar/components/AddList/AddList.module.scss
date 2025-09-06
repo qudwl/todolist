@@ -1,0 +1,12 @@
+@use "/src/style/mixins.scss" as *;
+@use "/src/style/variables.scss" as *;
+
+.addList {
+  @include listItem;
+}
+
+input.addList {
+  outline: none;
+  border-radius: 0px;
+  border-bottom: 2px solid $color-primary;
+}

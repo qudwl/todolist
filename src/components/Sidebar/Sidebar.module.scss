@@ -11,4 +11,20 @@
       visibility: visible;
     }
   }
+
+  .list {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 32px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .line {
+    margin: 32px;
+    border: 1px solid $color-background-darker;
+    border-radius: 1px;
+  }
 }
