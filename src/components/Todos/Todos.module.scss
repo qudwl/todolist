@@ -6,9 +6,11 @@
   height: 100vh;
   overflow-y: scroll;
   background-color: $color-background-raised;
-  padding: 100px 32px 0px;
+  padding: 32px;
+  padding-top: 32px;
   flex-shrink: 0;
   box-sizing: border-box;
+  transition: padding-top 0.1s ease-in-out;
 
   ul {
     list-style: none;
@@ -22,5 +24,6 @@
 
   @include mobile {
     width: 100vw;
+    padding-top: 100px;
   }
 }

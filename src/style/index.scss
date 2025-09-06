@@ -1,6 +1,11 @@
 @use "./variables.scss" as *;
 @use "./mixins.scss" as *;
-@use "./animations.scss" as *;
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
 
 body {
   font-family: "Inter", sans-serif;
