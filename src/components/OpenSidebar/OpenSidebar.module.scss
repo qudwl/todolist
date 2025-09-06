@@ -1,0 +1,25 @@
+@use "/src/style/mixins.scss" as *;
+@use "/src/style/variables.scss" as *;
+
+$opensidebar-size: 50px;
+
+.openSidebar {
+  position: fixed;
+  top: 16px;
+  left: calc($width-sidebar + 16px);
+  width: $opensidebar-size;
+  height: $opensidebar-size;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+  border: none;
+  background-color: $color-background-raised;
+
+  @include elevation("medium");
+
+  @include desktop {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+@use "./animations.scss" as *;
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: $color-background;
+  margin: 0px;
+}
+
+.root {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  transition: transform 0.15s ease-in-out;
+  overflow-x: hidden;
+
+  @include mobile {
+    transform: translateX(-$width-sidebar);
+  }
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}

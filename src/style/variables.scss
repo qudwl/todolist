@@ -1,0 +1,38 @@
+// Box shadow
+$shadow-hue: 0deg;
+$shadow-saturation: 0%;
+$shadow-lightness: 75%;
+$shadow-elevations: (
+  "low": (
+    0.3px 0.5px 0.8px
+      hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.07),
+    0.4px 0.8px 1.2px -0.4px hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.17),
+    0.8px 1.6px 2.5px -0.8px hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.26),
+  ),
+  "medium": (
+    0.3px 0.5px 0.8px
+      hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.08),
+    0.9px 1.9px 2.9px -0.3px hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.15),
+    1.9px 3.8px 5.8px -0.6px hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.23),
+    4.1px 8.2px 12.6px -0.8px hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.3),
+  ),
+  "high": (
+    0.3px 0.5px 0.8px
+      hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.07),
+    1.5px 3px 4.6px -0.1px hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.11),
+    2.6px 5.2px 8px -0.2px hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.14),
+    3.9px 7.8px 12px -0.4px hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.18),
+    5.6px 11.2px 17.2px -0.5px hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.21),
+    8px 16px 24.6px -0.6px hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.25),
+    11.4px 22.7px 34.9px -0.7px hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.28),
+    16px 32px 49.1px -0.8px hsla($shadow-hue, $shadow-saturation, $shadow-lightness, 0.32),
+  ),
+);
+
+// Colors
+$color-background: #f9f9f9;
+$color-text: #000;
+$color-background-raised: #fff;
+
+// Width
+$width-sidebar: 300px;

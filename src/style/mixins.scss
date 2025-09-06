@@ -1,0 +1,20 @@
+@use "./variables.scss" as *;
+@use "sass:map";
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin elevation($level: "medium") {
+  @if not map.has-key($shadow-elevations, $level) {
+    @error "Invalid elevation level '#{$level}'. Must be 'low', 'medium', or 'high'.";
+  }
+  box-shadow: map.get($shadow-elevations, $level);
+}

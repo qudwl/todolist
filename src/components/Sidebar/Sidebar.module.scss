@@ -1,0 +1,13 @@
+@use "/src/style/mixins.scss" as *;
+@use "/src/style/variables.scss" as *;
+
+.sidebar {
+  width: $width-sidebar;
+
+  @include mobile {
+    visibility: hidden;
+    &.isOpen {
+      visibility: visible;
+    }
+  }
+}
