@@ -11,8 +11,7 @@ body {
   font-family: "Inter", sans-serif;
   background-color: $color-background;
   margin: 0px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: thin;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -21,7 +20,7 @@ body {
 .root {
   display: flex;
   height: 100vh;
-  transition: transform 0.15s ease-in-out;
+  transition: transform $animation-time ease-in-out;
   overflow: hidden;
 
   @include mobile {
@@ -31,17 +30,14 @@ body {
     &.sidebar-open {
       transform: translateX(0);
       overflow: hidden;
+
+      h1 {
+        visibility: hidden;
+      }
     }
   }
 }
 
 .invisibleText {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  @include invisible;
 }

@@ -1,0 +1,73 @@
+@use "/src/style/variables.scss" as *;
+@use "/src/style/mixins.scss" as *;
+
+.changeList {
+  position: relative;
+
+  button {
+    transition: transform $animation-time ease-in-out;
+    position: relative;
+    z-index: 2;
+  }
+
+  .listSelector {
+    position: absolute;
+    top: 0px;
+    background-color: $color-background-raised;
+    left: -8px;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    transition: opacity $animation-time, visibility $animation-time ease-in-out;
+    border-radius: $border-radius;
+
+    button {
+      display: none;
+    }
+  }
+
+  &.open {
+    button[aria-expanded="true"] {
+      transform: rotate(180deg);
+      z-index: 4;
+    }
+
+    .listSelector {
+      visibility: visible;
+      width: 200px;
+      max-height: 300px;
+      margin-top: 64px;
+      z-index: 3;
+      height: unset;
+      opacity: 1;
+      border: 1px solid $color-background;
+      overflow-y: scroll;
+
+      @include elevation("medium");
+
+      button {
+        position: initial;
+        width: 100%;
+        height: 40px;
+        font-size: 1em;
+        padding: 0px 16px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        box-sizing: border-box;
+        margin: 0px;
+        text-align: start;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &.selected {
+          text-decoration: underline;
+          background-color: $color-background;
+        }
+      }
+    }
+  }
+}

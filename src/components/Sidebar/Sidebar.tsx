@@ -7,7 +7,7 @@ import TodoList from "./components/TodoList";
 import ListItem from "./components/ListItem";
 import { CiBoxList } from "react-icons/ci";
 import AddList from "./components/AddList";
-import { FaRegCheckSquare, FaRegSquare } from "react-icons/fa";
+import { FaRegCheckSquare, FaRegSquare, FaStar } from "react-icons/fa";
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, list, setList }) => {
 
@@ -18,9 +18,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, list, setList }) => {
     return (
         <div className={cn(styles.sidebar, isOpen && styles.isOpen)}>
             <ul className={styles.list}>
-                <ListItem selected={list === -3} icon={CiBoxList} name="All" onClick={() => setList(-3)} />
-                <ListItem selected={list === -2} icon={FaRegSquare} name="Todo" onClick={() => setList(-2)} />
-                <ListItem selected={list === -1} icon={FaRegCheckSquare} name="Done" onClick={() => setList(-1)} />
+                <ListItem selected={list === -4} icon={CiBoxList} name="All" onClick={() => setList(-4)} />
+                <ListItem selected={list === -3} icon={FaRegSquare} name="Todo" onClick={() => setList(-3)} />
+                <ListItem selected={list === -2} icon={FaRegCheckSquare} name="Done" onClick={() => setList(-2)} />
+                <ListItem selected={list === -1} icon={FaStar} name="Starred" onClick={() => setList(-1)} />
             </ul>
             <div className={styles.line} />
             <ul className={styles.list}>

@@ -3,7 +3,7 @@ import Dexie, { type EntityTable } from "dexie";
 interface Todo {
   id: number;
   text: string;
-  starred: boolean;
+  starred: number; // 0 is false, 1 is true.
   completed: number; // 0 is false, 1 is true.
   lastEdit: number;
   due: number; // -1 means does not have a due date.

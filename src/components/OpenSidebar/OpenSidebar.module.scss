@@ -17,7 +17,7 @@ $opensidebar-size: 50px;
   border: none;
   background-color: $color-background-raised;
 
-  @include elevation("high");
+  @include elevation("medium");
 
   @include desktop {
     display: none;

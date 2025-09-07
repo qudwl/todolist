@@ -6,6 +6,6 @@
 
   &.selected {
     background-color: $color-background-raised;
-    @include elevation("high");
+    @include elevation("medium");
   }
 }
